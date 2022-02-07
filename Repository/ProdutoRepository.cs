@@ -1,10 +1,11 @@
 using Microsoft.EntityFrameworkCore;
+using solidInCsharp.Interface;
 using solidInCsharp.Model;
 using System.Linq;
 
 namespace solidInCsharp.Repository
 {
-    public class ProdutoRepository: BaseReadOnlyRepository<Produto, ProdutoRepository>
+    public class ProdutoRepository : BaseReadOnlyRepository<Produto, ProdutoRepository>, IProdutoRepository
     {
         public ProdutoRepository(DbContextOptions<ProdutoRepository> options)
 			: base(options)

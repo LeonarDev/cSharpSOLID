@@ -1,10 +1,11 @@
 using Microsoft.EntityFrameworkCore;
+using solidInCsharp.Interface;
 using solidInCsharp.Model;
 using System.Linq;
 
 namespace solidInCsharp.Repository
 {
-    public class UsuarioRepository : BaseRepository<Usuario, UsuarioRepository>
+    public class UsuarioRepository : BaseRepository<Usuario, UsuarioRepository>, IUsuarioRepository
     {
         public UsuarioRepository(DbContextOptions<UsuarioRepository> options)
 			: base(options)

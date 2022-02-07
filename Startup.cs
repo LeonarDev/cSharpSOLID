@@ -1,14 +1,15 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System.Text;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Text;
+using solidInCsharp.Interface;
 using solidInCsharp.Repository;
 using solidInCsharp.Service;
-using Microsoft.EntityFrameworkCore;
 
 namespace solidInCsharp
 {
@@ -47,6 +48,9 @@ namespace solidInCsharp
 			services.AddDbContext<UsuarioRepository>(options => options.UseInMemoryDatabase(databaseName: "Test"));
 			services.AddDbContext<ProdutoRepository>(options => options.UseInMemoryDatabase(databaseName: "Test") );
 			
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<IProdutoRepository, ProdutoRepository>();
+
 			services.AddScoped<UsuarioService, UsuarioService>();
 			services.AddScoped<ProdutoReportService, ProdutoReportService>();
         }
@@ -55,14 +59,10 @@ namespace solidInCsharp
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
-            {
                 app.UseDeveloperExceptionPage();
-            }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
 			app.UseAuthentication();
             app.UseAuthorization();
 
