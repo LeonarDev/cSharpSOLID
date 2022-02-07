@@ -2,7 +2,7 @@
 
 O **Princípio Aberto/Fechado** diz que um elemento de software deve ser aberto para extensão, mas fechado para modificações.
 
-Nosso projeto de exemplo violava esse princípio na classe ProdutoReportService.cs, ao exigir que para criar um novo formato de relatório o método fosse completamente modificado.
+Nosso projeto de exemplo violava esse princípio na classe `ProdutoReportService`, ao exigir que para criar um novo formato de relatório o método fosse completamente modificado.
 
 Além disso, o método possui duas responsabilidades, uma com o formato de dados (formato do arquivo) e outra com o conteúdo (colunas e linhas), então este método viola também o [SRP](1-SRP.md).
 
