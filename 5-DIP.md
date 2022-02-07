@@ -51,7 +51,7 @@ Nesta classe, precisamos isolar a criação do `JWTService` e `CriptografiaServi
 A implementação desta classe fica desta forma:
 
 ```C#
-nomespace solidInCsharp.Service
+namespace solidInCsharp.Service
 {
     public class UsuarioService: IUsuarioService
     {
