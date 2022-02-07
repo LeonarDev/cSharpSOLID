@@ -13,7 +13,7 @@ Nosso projeto viola esse princípio em vários pontos, que listamos a seguir:
 Para resolução destes pontos, devemos criar interfaces e em .Net o meio mais fácil é fazer a injeção de dependencias. Por exemplo, na classe `UsuarioService`:
 
 ```C#
-nomespace solidInCsharp.Service
+namespace solidInCsharp.Service
 {
     public class UsuarioService
     {
