@@ -22,7 +22,6 @@ namespace solidInCsharp.Controllers
 		public ActionResult<dynamic> Login([FromBody]Usuario model)
 		{
 			var token = usuarioService.Login(model.Email, model.Senha);
-			
 			return new
 			{
 				token = token
@@ -33,10 +32,8 @@ namespace solidInCsharp.Controllers
 		public ActionResult<dynamic> CreateUser([FromBody]Usuario model)
 		{
 			usuarioService.CriarUsuario(model.Email, model.Nome, model.Senha);
-			
 			return new
-			{
-			};
+			{ };
 		}
     }
 }
