@@ -17,32 +17,33 @@ Os principios do SOLID são:
 
 O projeto aqui mostrado é um serviço REST, que, no commit inicial. viola estes princípios. Em cada Commit, ataco um dos princípios, corrigindo sua implementação.
 
-
 A descrição das mudanças se encontra nos links abaixo:
 
 * [1 - SRP - Principio da responsabilidade única](1-SRP.md) - Commit: [381db53](https://github.com/leonardev/cSharpSolid/commit/381db5349656fb699d88828495c0e43bf6f086e2)
-* [2 - OCP - Principio Aberto/Fechado.md](2-OCP.md)<!--  - Commit: [](https://github.com/leonardev/cSharpSolid/commit/) -->
-> [3 - LSP - Principio da Substituição de Liskov](3-LSP.md)<!-- - Commit: [](https://github.com/leonardev/cSharpSolid/commit/) -->
-> [4 - ISP - Principio de Segregação de Interfaces](4-ISP.md)<!-- - Commit: [](https://github.com/leonardev/cSharpSolid/commit/) -->
-> [5 - DIP - Principio da Inversão de Dependencia](5-DIP.md)<!-- - Commit [](https://github.com/leonardev/cSharpSolid/commit/) -->
+* [2 - OCP - Principio Aberto/Fechado.md](2-OCP.md)  - Commit: [45e3a43](https://github.com/leonardev/cSharpSolid/commit/45e3a4380a13b76dee5cc6d4323e50e4d9aaceba)
+<!-- * [3 - LSP - Principio da Substituição de Liskov](3-LSP.md)<!-- - Commit: [](https://github.com/leonardev/cSharpSolid/commit/)
+* [4 - ISP - Principio de Segregação de Interfaces](4-ISP.md) - Commit: [](https://github.com/leonardev/cSharpSolid/commit/)
+* [5 - DIP - Principio da Inversão de Dependencia](5-DIP.md) - Commit [](https://github.com/leonardev/cSharpSolid/commit/) -->
 
 #### Request/Response:
-<div style="text-align:center">
-    <img src='./Assets/Insomnia – CreateUser.png'>
-    <q>Criar Usuário</q>
-</div>
-<div style="text-align:center">
-    <img src='./Assets/Insomnia - Login.png'>
-    <q>Login</q>
-</div>
-<div style="text-align:center">
-    <img src='./Assets/Insomnia - ProductReport-1.png'>
-    <q>Relatório de Produtos em CSV</q>
-</div>
-<div style="text-align:center">
-    <img src='./Assets/Insomnia - ProductReport-2.png'>
-    <q>Relatório de Produtos em HTML</q>
-</div>
+<p align="center"><img src='./Assets/Insomnia – CreateUser.png'><br>
+    <q align="center">Criar Usuário</q>
+</p>
+<br>
+
+<p align="center"><img src='./Assets/Insomnia - Login.png'><br>
+    <q align="center">Login</q>
+</p>
+<br>
+
+<p align="center"><img src='./Assets/Insomnia - ProductReport-1.png'><br>
+    <q align="center">Relatório de Produtos em CSV</q>
+</p>
+<br>
+<p align="center"><img src='./Assets/Insomnia - ProductReport-2.png'><br>
+    <q align="center">Relatório de Produtos em HTML</q>
+</p>
+<br>
 
 #### Referências:
 - [O que é SOLID: O guia completo para você entender os 5 princípios da POO](https://medium.com/desenvolvendo-com-paixao/o-que-%C3%A9-solid-o-guia-completo-para-voc%C3%AA-entender-os-5-princ%C3%ADpios-da-poo-2b937b3fc530)
