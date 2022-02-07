@@ -21,10 +21,10 @@ O projeto aqui mostrado é um serviço REST, que, no commit inicial. viola estes
 A descrição das mudanças se encontra nos links abaixo:
 
 * [1 - SRP - Principio da responsabilidade única](1-SRP.md) - Commit: [381db53](https://github.com/leonardev/cSharpSolid/commit/381db5349656fb699d88828495c0e43bf6f086e2)
-<!-- * [2 - OCP - Principio Aberto/Fechado.md](2-OCP.md) - Commit: []()
-* [3 - LSP - Principio da Substituição de Liskov](3-LSP.md) - Commit: [](https://github.com/leonardev/cSharpSolid/commit/)
-* [4 - ISP - Principio de Segregação de Interfaces](4-ISP.md) - Commit: [](https://github.com/leonardev/cSharpSolid/commit/)
-* [5 - DIP - Principio da Inversão de Dependencia](5-DIP.md) - Commit [](https://github.com/leonardev/cSharpSolid/commit/) -->
+* [2 - OCP - Principio Aberto/Fechado.md](2-OCP.md)<!--  - Commit: [](https://github.com/leonardev/cSharpSolid/commit/) -->
+> [3 - LSP - Principio da Substituição de Liskov](3-LSP.md)<!-- - Commit: [](https://github.com/leonardev/cSharpSolid/commit/) -->
+> [4 - ISP - Principio de Segregação de Interfaces](4-ISP.md)<!-- - Commit: [](https://github.com/leonardev/cSharpSolid/commit/) -->
+> [5 - DIP - Principio da Inversão de Dependencia](5-DIP.md)<!-- - Commit [](https://github.com/leonardev/cSharpSolid/commit/) -->
 
 #### Request/Response:
 <div style="text-align:center">
@@ -36,8 +36,12 @@ A descrição das mudanças se encontra nos links abaixo:
     <q>Login</q>
 </div>
 <div style="text-align:center">
-    <img src='./Assets/Insomnia - ProductReport.png'>
-    <q>Produtos</q>
+    <img src='./Assets/Insomnia - ProductReport-1.png'>
+    <q>Relatório de Produtos em CSV</q>
+</div>
+<div style="text-align:center">
+    <img src='./Assets/Insomnia - ProductReport-2.png'>
+    <q>Relatório de Produtos em HTML</q>
 </div>
 
 #### Referências:
