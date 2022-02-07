@@ -23,7 +23,7 @@ A descrição das mudanças se encontra nos links abaixo:
 * [2 - OCP - Principio Aberto/Fechado.md](2-OCP.md)  - Commit: [45e3a43](https://github.com/leonardev/cSharpSolid/commit/45e3a4380a13b76dee5cc6d4323e50e4d9aaceba)
 * [3 - LSP - Principio da Substituição de Liskov](3-LSP.md) - Commit: [284209e](https://github.com/leonardev/cSharpSolid/commit/284209e62e0f801d3e223da19ecfc30151653be6)
 * [4 - ISP - Principio de Segregação de Interfaces](4-ISP.md) - Commit: [add95ff](https://github.com/leonardev/cSharpSolid/commit/add95ffec4182dc220c2b2186a60c29dfed7726b)
-<!-- * [5 - DIP - Principio da Inversão de Dependencia](5-DIP.md) - Commit [](https://github.com/leonardev/cSharpSolid/commit/) -->
+* [5 - DIP - Principio da Inversão de Dependencia](5-DIP.md) - Commit [69c2c5c](https://github.com/leonardev/cSharpSolid/commit/69c2c5c79589295d15a3099c785b2684830deb2e)
 
 #### Request/Response:
 <p align="center"><img src='./Assets/Insomnia – CreateUser.png'><br>
