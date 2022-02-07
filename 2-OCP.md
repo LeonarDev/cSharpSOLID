@@ -47,7 +47,7 @@ Começamos nossa refatoração extraindo o comportamento comum dos relatórios t
   * Fim da Linha
 * Fim do Relatório
 
-Para representar esse padrão, criamos a interface IReportGenerator:
+Para representar esse padrão, criamos a interface `IReportGenerator`:
 
 ```C#
 namespace solidInCsharp.Service.Report
