@@ -29,7 +29,7 @@ namespace solidInCsharp.Controllers
 		}
 
 		[HttpPost]
-		public ActionResult<dynamic> CreateUser([FromBody]Usuario model)
+		public ActionResult<dynamic> CriarUsuario([FromBody]Usuario model)
 		{
 			usuarioService.CriarUsuario(model.Email, model.Nome, model.Senha);
 			return new
