@@ -1,6 +1,6 @@
 ## Liskov Substitution Principle
 
-O **Princípio de Substituição de [Liskov](https://www.google.com/search?q=barbara+liskov&oq=barbara+liskov&aqs=chrome..69i57.4378j0j1&sourceid=chrome&ie=UTF-8)**, diz que as classes bases devem poder ser substituídas pelas classes derivadas em todos os contextos, ou seja, uma classe derivada não pode modificar o "contrato" da classe base.
+O **Princípio de Substituição de [Liskov](https://www.google.com/search?q=barbara+liskov&oq=barbara+liskov&aqs=chrome..69i57.4378j0j1&sourceid=chrome&ie=UTF-8)**, diz que as classes bases devem ser substituídas pelas classes derivadas em todos os contextos, ou seja, uma classe derivada não pode modificar o "contrato" da classe base.
 
 Nosso projeto viola esse princípio na classe `ProdutoRepository`:
 
@@ -13,9 +13,11 @@ namespace solidInCsharp.Repository
         public new void Add(Produto item) {
             throw new Exception("Products are readonly");
         }
+
         public new void Update(Produto item) {
             throw new Exception("Products are readonly");
         }
+
         public new void Remove(Produto item) {
             throw new Exception("Products are readonly");
         }
@@ -53,7 +55,7 @@ namespace solidInCsharp.Repository
             : base(options)
         {
             // trecho omitido
-         }
+        }
     }
 }
 ```
