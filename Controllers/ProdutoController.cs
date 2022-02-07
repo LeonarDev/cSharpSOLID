@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using solidInCsharp.Service;
+using solidInCsharp.Service.Report;
 using Microsoft.AspNetCore.Authorization;
 
 namespace solidInCsharp.Controllers
@@ -21,7 +22,7 @@ namespace solidInCsharp.Controllers
 		[Authorize]
 		public ActionResult<string> RelatorioProdutos([FromQuery]TipoRelatorio tipoRelatorio)
 		{
-			return produtoReportService.GerarRelatorio(tipoRelatorio);
+			return produtoReportService.GerarRelatorio(ReportGeneratorFactory.ObterGerador(tipoRelatorio));
 		}
     }
 }
