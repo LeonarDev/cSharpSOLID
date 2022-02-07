@@ -4,7 +4,7 @@ O **Princípio Aberto/Fechado** diz que um elemento de software deve ser aberto 
 
 Nosso projeto de exemplo violava esse princípio na classe ProdutoReportService.cs, ao exigir que para criar um novo formato de relatório o método fosse completamente modificado.
 
-Além disso, o método possui duas responsabilidades, uma com o formato de dados (formato do arquivo) e outra com o conteúdo (colunas e linhas), então este método viola também o [1-SRP.md](SRP).
+Além disso, o método possui duas responsabilidades, uma com o formato de dados (formato do arquivo) e outra com o conteúdo (colunas e linhas), então este método viola também o [SRP](1-SRP.md).
 
 ```C#
 namespace solidInCsharp.Service
