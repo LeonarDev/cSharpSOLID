@@ -1,9 +1,10 @@
 using solidInCsharp.Repository;
+using solidInCsharp.Service.Interface;
 using solidInCsharp.Service.Report;
 
 namespace solidInCsharp.Service
 {
-    public class ProdutoReportService
+    public class ProdutoReportService : IProdutoReportService
     {
 		private ProdutoRepository Repository;
 

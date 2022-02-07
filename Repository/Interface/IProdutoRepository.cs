@@ -1,6 +1,6 @@
 using solidInCsharp.Model;
 
-namespace solidInCsharp.Interface
+namespace solidInCsharp.Repository.Interface
 {
     public interface IProdutoRepository : IReadRepository<Produto>
     { }

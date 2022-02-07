@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using solidInCsharp.Service;
 using solidInCsharp.Model;
+using solidInCsharp.Service.Interface;
 
 namespace solidInCsharp.Controllers
 {
@@ -9,9 +9,9 @@ namespace solidInCsharp.Controllers
     [Route("[controller]")]
     public class UsuarioController : ControllerBase {
         private readonly ILogger<UsuarioController> _logger;
-		private readonly UsuarioService usuarioService;
+		private readonly IUsuarioService usuarioService;
 
-        public UsuarioController(ILogger<UsuarioController> logger, UsuarioService usuarioService)
+        public UsuarioController(ILogger<UsuarioController> logger, IUsuarioService usuarioService)
         {
             _logger = logger;
 			this.usuarioService = usuarioService;

@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using solidInCsharp.Service;
+using solidInCsharp.Service.Interface;
 using solidInCsharp.Service.Report;
-using Microsoft.AspNetCore.Authorization;
+using solidInCsharp.Service;
 
 namespace solidInCsharp.Controllers
 {
@@ -10,9 +11,9 @@ namespace solidInCsharp.Controllers
     [Route("[controller]")]
     public class ProdutoController : ControllerBase {
         private readonly ILogger<ProdutoController> _logger;
-		private readonly ProdutoReportService produtoReportService;
+		private readonly IProdutoReportService produtoReportService;
 
-        public ProdutoController(ILogger<ProdutoController> logger, ProdutoReportService produtoReportService)
+        public ProdutoController(ILogger<ProdutoController> logger, IProdutoReportService produtoReportService)
         {
             _logger = logger;
 			this.produtoReportService = produtoReportService;

@@ -7,8 +7,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using solidInCsharp.Interface;
+using solidInCsharp.Repository.Interface;
 using solidInCsharp.Repository;
+using solidInCsharp.Service.Interface;
 using solidInCsharp.Service;
 
 namespace solidInCsharp
@@ -51,8 +52,11 @@ namespace solidInCsharp
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
 
-			services.AddScoped<UsuarioService, UsuarioService>();
-			services.AddScoped<ProdutoReportService, ProdutoReportService>();
+            services.AddScoped<ICriptografiaService, CriptografiaService>();
+            services.AddScoped<IJWTService, JWTService>();
+
+            services.AddScoped<IUsuarioService, UsuarioService>();
+			services.AddScoped<IProdutoReportService, ProdutoReportService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

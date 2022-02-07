@@ -1,4 +1,4 @@
-namespace solidInCsharp.Interface
+namespace solidInCsharp.Repository.Interface
 {
     public interface IWriteRepository<T> where T : class
     {

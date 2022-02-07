@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using solidInCsharp.Interface;
+using solidInCsharp.Repository.Interface;
 using solidInCsharp.Model;
 using System.Linq;
 

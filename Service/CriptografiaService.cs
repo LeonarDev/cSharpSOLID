@@ -1,9 +1,10 @@
 using System;
 using System.Security.Cryptography;
+using solidInCsharp.Service.Interface;
 
 namespace solidInCsharp.Service
 {
-    public class CriptografiaService
+    public class CriptografiaService : ICriptografiaService
     {
         public bool ValidarSenha(string senhaCripto, string senhaDigitada) {
 			byte[] hashBytes = Convert.FromBase64String(senhaCripto);

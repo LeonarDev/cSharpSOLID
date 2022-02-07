@@ -1,13 +1,14 @@
-using System;
+using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Microsoft.IdentityModel.Tokens;
+using System;
 using solidInCsharp.Model;
+using solidInCsharp.Service.Interface;
 
 namespace solidInCsharp.Service
 {
-    public class JWTService
+    public class JWTService : IJWTService
     {
         public string GerarToken(Usuario user) {
 			var tokenHandler = new JwtSecurityTokenHandler();
