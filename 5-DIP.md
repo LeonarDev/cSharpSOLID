@@ -10,7 +10,7 @@ Nosso projeto viola esse princípio em vários pontos, que listamos a seguir:
 * Services tem dependencia de outros services diretamente
 * Services constroem outros services
 
-Para resolução destes ponteos, devemos criar interfaces e em .Net o meio mais fácil é fazer a injeção de dependencias. Por exemplo, na classe UsuarioService:
+Para resolução destes pontos, devemos criar interfaces e em .Net o meio mais fácil é fazer a injeção de dependencias. Por exemplo, na classe `UsuarioService`:
 
 ```C#
 nomespace solidInCsharp.Service
@@ -46,7 +46,7 @@ nomespace solidInCsharp.Service
 }
 ```
 
-Nesta classe, precisamos isolar a criação do JWTService e CriptoGrafiaService, além de criar uma interface para ela que permitirá que os controllers não tenham uma dependencia direta da implementação.
+Nesta classe, precisamos isolar a criação do `JWTService` e `CriptoGrafiaService`, além de criar uma interface para ela que permitirá que os controllers não tenham uma dependencia direta da implementação.
 
 A implementação desta classe fica desta forma:
 
@@ -70,7 +70,7 @@ nomespace solidInCsharp.Service
             if (usuario != null) {
                 throw new Exception("Erro, usuário já existe");
             }
-            usuario = new Usuario() { Email = email, Nome = nome, Senha = criptografiaService.CriptografarSenha(senha)};
+            usuario = new Usuario() { Email = email, Nome = nome, Senha = CriptografiaService.CriptografarSenha(senha)};
             Repository.Add(usuario);
         }
 
@@ -85,4 +85,29 @@ nomespace solidInCsharp.Service
 }
 ```
 
-Por fim, fazemos ajuste na classe de Startup para permitir a injeção de dependencias, e nosso projeto está concluído, seguindo os 5 princípios do SOLID!
+Por fim, fazemos ajuste na classe de `Startup` para permitir a injeção de dependencias.
+
+```C#
+namespace solidInCsharp
+{
+    public class Startup
+    {
+        // Codigo omitido
+
+        public void ConfigureServices(IServiceCollection services)
+        {
+            // Codigo omitido
+
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<IProdutoRepository, ProdutoRepository>();
+
+            services.AddScoped<ICriptografiaService, CriptografiaService>();
+            services.AddScoped<IJWTService, JWTService>();
+
+            services.AddScoped<IUsuarioService, UsuarioService>();
+			services.AddScoped<IProdutoReportService, ProdutoReportService>();
+        }
+        
+        // Codigo omitido
+    }
+```
