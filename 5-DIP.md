@@ -46,7 +46,7 @@ nomespace solidInCsharp.Service
 }
 ```
 
-Nesta classe, precisamos isolar a criação do `JWTService` e `CriptoGrafiaService`, além de criar uma interface para ela que permitirá que os controllers não tenham uma dependencia direta da implementação.
+Nesta classe, precisamos isolar a criação do `JWTService` e `CriptografiaService`, além de criar uma interface para ela que permitirá que os controllers não tenham uma dependencia direta da implementação.
 
 A implementação desta classe fica desta forma:
 
