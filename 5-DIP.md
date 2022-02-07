@@ -13,33 +13,34 @@ Nosso projeto viola esse princípio em vários pontos, que listamos a seguir:
 Para resolução destes ponteos, devemos criar interfaces e em .Net o meio mais fácil é fazer a injeção de dependencias. Por exemplo, na classe UsuarioService:
 
 ```C#
-namespace solidInCsharp.Service
+nomespace solidInCsharp.Service
 {
     public class UsuarioService
     {
-        private IUsuarioRepository repository;
+        private IUsuarioRepository Repository;
+
         public UsuarioService(IUsuarioRepository repository)
         { 
             Repository = repository;
         }
 
-        public void CriarUsuario(string Email, string Name, string Senha)
+        public void CriarUsuario(string email, string nome, string senha)
         {
-            var user = Repository.ObterUsuario(Email);
-            if (user != null) {
+            var usuario = Repository.ObterUsuario(email);
+            if (usuario != null) {
                 throw new Exception("Erro, usuário já existe");
             }
-            user = new Usuario() { Email = Email, Nome = Name, Senha = new CriptografiaService().CriptografarSenha(Senha)};
-            Repository.Add(user);
+            usuario = new Usuario() { Email = email, Nome = nome, Senha = new CriptografiaService().CriptografarSenha(senha)};
+            Repository.Add(usuario);
         }
 
-        public string Login(string Email,  string Senha)
+        public string Login(string email,  string senha)
         {
-            var user = Repository.ObterUsuario(Email);
-            if (user == null || !new CriptografiaService().ValidarSenha(user.Senha, Senha)) {
+            var usuario = Repository.ObterUsuario(email);
+            if (usuario == null || !new CriptografiaService().ValidarSenha(usuario.Senha, senha)) {
                 throw new Exception("Erro, usuário ou senha incorreto");
             }
-            return new JWTService().GerarToken(user);
+            return new JWTService().GerarToken(usuario);
         }
     }
 }
@@ -50,7 +51,7 @@ Nesta classe, precisamos isolar a criação do JWTService e CriptoGrafiaService,
 A implementação desta classe fica desta forma:
 
 ```C#
-namespace solidInCsharp.Service
+nomespace solidInCsharp.Service
 {
     public class UsuarioService: IUsuarioService
     {
@@ -64,18 +65,18 @@ namespace solidInCsharp.Service
             JWTService = jwtService;
         }
 
-        public void CriarUsuario(string Email, string Name, string Senha) {
-            var usuario = Repository.ObterUsuario(Email);
+        public void CriarUsuario(string email, string nome, string senha) {
+            var usuario = Repository.ObterUsuario(email);
             if (usuario != null) {
                 throw new Exception("Erro, usuário já existe");
             }
-            usuario = new Usuario() { Email = Email, Nome = Name, Senha = criptografiaService.CriptografarSenha(Senha)};
+            usuario = new Usuario() { Email = email, Nome = nome, Senha = criptografiaService.CriptografarSenha(senha)};
             Repository.Add(usuario);
         }
 
-        public string Login(string Email,  string Senha) {
-            var usuario = Repository.ObterUsuario(Email);
-            if (usuario == null || !CriptografiaService.ValidarSenha(usuario.Senha, Senha)) {
+        public string Login(string email,  string senha) {
+            var usuario = Repository.ObterUsuario(email);
+            if (usuario == null || !CriptografiaService.ValidarSenha(usuario.Senha, senha)) {
                 throw new Exception("Erro, usuário ou senha incorreto");
             }
             return JWTService.GerarToken(usuario);
